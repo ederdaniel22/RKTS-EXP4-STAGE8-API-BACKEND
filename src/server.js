@@ -17,8 +17,6 @@ app.use(express.json());
 
 app.use(routes);
 
-// conexão com banco de dados
-
 app.use((error, request, response, next ) => {
   if(error instanceof AppError){
     return response.status(error.statusCode).json({
